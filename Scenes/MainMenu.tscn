@@ -1,0 +1,243 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Scenes/UI/Buttons/OptionsButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Graphics/UI/TitleTexture_BGColors.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/UI/Buttons/NewGameButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/UI/Buttons/ContinueButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Graphics/UI/TitleTexture_BottomCloudds.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/UI/Title_Texture_Button_Settings_Unselected.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/UI/TitleTexture_BGClouds.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/Menu/MainMenu.gd" type="Script" id=8]
+[ext_resource path="res://Graphics/UI/TitleTexture.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/UI/Title_Texture_Button_LoadGame_Unselected.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/UI/Title_Texture_Button_NewGame_Unselected.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/UI/Title_Texture_Button_LoadGame_Selected.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/UI/Title_Texture_Button_NewGame_Selected.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/UI/Title_Texture_Button_Settings_Selected.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/UI/Title_Texture_Button_Exit_Selected.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/UI/Title_Texture_Button_Exit_Unselected.png" type="Texture" id=16]
+
+[sub_resource type="Animation" id=1]
+resource_name = "FadeIn"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "FadeOut"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BGTexture" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -110.0
+margin_top = -78.0
+margin_right = 115.0
+margin_bottom = 48.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1391.0
+margin_top = -78.0
+margin_right = -1166.0
+margin_bottom = 48.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1168.0
+margin_top = -78.0
+margin_right = 1393.0
+margin_bottom = 48.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleTexture" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BottomCloudTexture" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -125.0
+margin_right = 223.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -259.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu"]
+margin_right = 1280.0
+margin_bottom = 259.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
+margin_right = 1280.0
+margin_bottom = 259.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 18
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow/Buttons"]
+margin_top = 51.0
+margin_right = 1280.0
+margin_bottom = 91.0
+
+[node name="NewGame" parent="Menu/CenterRow/Buttons/CenterContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 390.0
+margin_right = 890.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 500, 40 )
+texture_normal = ExtResource( 11 )
+texture_hover = ExtResource( 13 )
+expand = true
+stretch_mode = 5
+scene_to_load = "res://Scenes/Game.tscn"
+
+[node name="CenterContainer2" type="CenterContainer" parent="Menu/CenterRow/Buttons"]
+margin_top = 109.0
+margin_right = 1280.0
+margin_bottom = 149.0
+
+[node name="ContinueButton" parent="Menu/CenterRow/Buttons/CenterContainer2" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 390.0
+margin_right = 890.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 500, 40 )
+texture_normal = ExtResource( 10 )
+texture_hover = ExtResource( 12 )
+expand = true
+stretch_mode = 5
+
+[node name="CenterContainer3" type="CenterContainer" parent="Menu/CenterRow/Buttons"]
+margin_top = 167.0
+margin_right = 1280.0
+margin_bottom = 207.0
+
+[node name="OptionsButton" parent="Menu/CenterRow/Buttons/CenterContainer3" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 390.0
+margin_right = 890.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 500, 40 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 14 )
+texture_hover = ExtResource( 14 )
+expand = true
+stretch_mode = 5
+
+[node name="ExitButton" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -90.0
+margin_top = -66.0
+margin_right = -23.0
+margin_bottom = 1.0
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 15 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fade" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FadeIn = SubResource( 1 )
+anims/FadeOut = SubResource( 2 )
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]

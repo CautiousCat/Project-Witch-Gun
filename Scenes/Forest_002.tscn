@@ -1,0 +1,143 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Graphics/Backgrounds/MushroomBG_Background_5.png" type="Texture" id=1]
+[ext_resource path="res://Graphics/Backgrounds/MushroomBG_Background_1.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Backgrounds/MushroomBG_Background_6.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Backgrounds/MushroomBG.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Graphics/Tilesets/Zones/Forest Zone/Tiles_Forest.tres" type="TileSet" id=6]
+[ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/Room.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/Prototype World.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/NextRoom.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Enemies/PuppetGolem.tscn" type="PackedScene" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 363, 174 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 132 )
+
+[node name="Forest_002" type="Node2D" groups=[
+"world",
+]]
+script = ExtResource( 9 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( -196622, 4, 0, -196621, 5, 0, -196620, 5, 0, -196619, 5, 0, -196618, 5, 0, -196617, 5, 0, -196616, 5, 0, -196615, 5, 0, -196614, 5, 0, -196613, 5, 0, -196612, 5, 0, -196611, 5, 0, -196610, 5, 0, -196609, 5, 0, -262144, 5, 0, -262143, 5, 0, -262142, 5, 0, -262141, 5, 0, -262140, 5, 0, -262139, 5, 0, -262138, 5, 0, -262137, 5, 0, -262136, 5, 0, -262135, 6, 0, -131086, 8, 0, -131085, 8, 0, -131084, 8, 0, -131083, 8, 0, -131082, 8, 0, -131081, 8, 0, -131080, 8, 0, -131079, 8, 0, -131078, 8, 0, -131077, 8, 0, -131076, 8, 0, -131075, 8, 0, -131074, 8, 0, -131073, 8, 0, -196608, 8, 0, -196607, 8, 0, -196606, 8, 0, -196605, 8, 0, -196604, 8, 0, -196603, 8, 0, -196602, 8, 0, -196601, 8, 0, -196600, 8, 0, -196599, 8, 0, -65550, 8, 0, -65549, 8, 0, -65548, 8, 0, -65547, 8, 0, -65546, 8, 0, -65545, 8, 0, -65544, 8, 0, -65543, 8, 0, -65542, 8, 0, -65541, 8, 0, -65540, 8, 0, -65539, 8, 0, -65538, 8, 0, -65537, 8, 0, -131072, 8, 0, -131071, 8, 0, -131070, 8, 0, -131069, 8, 0, -131068, 8, 0, -131067, 8, 0, -131066, 8, 0, -131065, 8, 0, -131064, 8, 0, -131063, 8, 0, -14, 8, 0, -13, 8, 0, -12, 8, 0, -11, 8, 0, -10, 8, 0, -9, 8, 0, -8, 8, 0, -7, 8, 0, -6, 8, 0, -5, 8, 0, -4, 8, 0, -3, 8, 0, -2, 8, 0, -1, 8, 0, -65536, 8, 0, -65535, 8, 0, -65534, 8, 0, -65533, 8, 0, -65532, 8, 0, -65531, 8, 0, -65530, 8, 0, -65529, 8, 0, -65528, 8, 0, -65527, 8, 0, 65522, 8, 0, 65523, 8, 0, 65524, 8, 0, 65525, 8, 0, 65526, 8, 0, 65527, 8, 0, 65528, 8, 0, 65529, 8, 0, 65530, 8, 0, 65531, 8, 0, 65532, 8, 0, 65533, 8, 0, 65534, 8, 0, 65535, 8, 0, 0, 8, 0, 1, 8, 0, 2, 8, 0, 3, 8, 0, 4, 8, 0, 5, 8, 0, 6, 8, 0, 7, 8, 0, 8, 8, 0, 9, 8, 0, 131058, 8, 0, 131059, 8, 0, 131060, 8, 0, 131061, 8, 0, 131062, 8, 0, 131063, 8, 0, 131064, 8, 0, 131065, 8, 0, 131066, 8, 0, 131067, 8, 0, 131068, 8, 0, 131069, 8, 0, 131070, 8, 0, 131071, 8, 0, 65536, 8, 0, 65537, 8, 0, 65538, 8, 0, 65539, 8, 0, 65540, 8, 0, 65541, 8, 0, 65542, 8, 0, 65543, 8, 0, 65544, 8, 0, 65545, 8, 0, 196594, 8, 0, 196595, 8, 0, 196596, 8, 0, 196597, 8, 0, 196598, 8, 0, 196599, 8, 0, 196600, 8, 0, 196601, 8, 0, 196602, 8, 0, 196603, 8, 0, 196604, 8, 0, 196605, 8, 0, 196606, 8, 0, 196607, 8, 0, 131072, 8, 0, 131073, 8, 0, 131074, 8, 0, 131075, 8, 0, 131076, 8, 0, 131077, 8, 0, 131078, 8, 0, 131079, 8, 0, 131080, 8, 0, 131081, 8, 0 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = -1
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 608, -286 )
+scale = Vector2( 2.62227, 2.76645 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1006, 608 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 0.2 )
+motion_offset = Vector2( 0, -100 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2( 1.25, 1.25 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1280, 256 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.3 )
+motion_offset = Vector2( 0, -50 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+scale = Vector2( 1.25, 1.25 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1280, 256 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.7, 0.5 )
+motion_offset = Vector2( 0, -125 )
+motion_mirroring = Vector2( 1280, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 12, 1.52588e-05 )
+scale = Vector2( 1.25, 1.25 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1280, 256 )
+
+[node name="CanvasModulate2" type="CanvasModulate" parent="ParallaxBackground"]
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( -233, -172 )
+fallSpeedMax = 400
+fallAccel = 1000
+
+[node name="Camera2D" type="Camera2D" parent="Player" groups=[
+"player_camera",
+]]
+position = Vector2( -0.894653, 3.52028 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+process_mode = 0
+limit_left = -10000
+smoothing_enabled = true
+script = ExtResource( 7 )
+
+[node name="Room1" type="Area2D" parent="."]
+position = Vector2( -71, -221 )
+collision_layer = 0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+room_type = "starting_room"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room1"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="NextRoom" parent="." instance=ExtResource( 10 )]
+next_room = "res://Scenes/Forest_001.tscn"
+coming_from = "left"
+
+[node name="CollisionShape2D" parent="NextRoom" index="0"]
+position = Vector2( -447, -177 )
+shape = SubResource( 2 )
+
+[node name="NextRoom2" parent="." instance=ExtResource( 10 )]
+next_room = "res://Scenes/Forest_001.tscn"
+coming_from = "right"
+
+[node name="CollisionShape2D" parent="NextRoom2" index="0"]
+position = Vector2( 306, -180 )
+shape = SubResource( 2 )
+
+[node name="LeftEntrance" type="Position2D" parent="." groups=[
+"left_entrance",
+]]
+position = Vector2( -421, -139 )
+
+[node name="LeftEntrance2" type="Position2D" parent="." groups=[
+"right_entrance",
+]]
+position = Vector2( 269, -144 )
+
+[node name="PuppetGolem" parent="." instance=ExtResource( 11 )]
+position = Vector2( -147, -155 )
+
+[connection signal="body_entered" from="Room1" to="Room1" method="_on_Room1_body_entered"]
+
+[editable path="NextRoom"]
+[editable path="NextRoom2"]

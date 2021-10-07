@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/AudioManager.gd" type="Script" id=2]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource( 2 )
+
+[node name="sfx" type="Node" parent="."]
+
+[node name="sfx_player_1" type="AudioStreamPlayer" parent="sfx"]
+
+[node name="sfx_player_2" type="AudioStreamPlayer" parent="sfx"]
+
+[node name="sfx_player_3" type="AudioStreamPlayer" parent="sfx"]
+
+[node name="sfx_player_4" type="AudioStreamPlayer" parent="sfx"]
+
+[node name="sfx_player_5" type="AudioStreamPlayer" parent="sfx"]
+
+[node name="sfx_player_6" type="AudioStreamPlayer" parent="sfx"]
+
+[node name="sfx_player_7" type="AudioStreamPlayer" parent="sfx"]
+
+[node name="sfx_player_8" type="AudioStreamPlayer" parent="sfx"]
+
+[node name="sfx_player_9" type="AudioStreamPlayer" parent="sfx"]
+
+[node name="sfx_player_10" type="AudioStreamPlayer" parent="sfx"]
+
+[node name="music" type="Node" parent="."]
+
+[node name="music_player_1" type="AudioStreamPlayer" parent="music"]
+
+[node name="music_player_2" type="AudioStreamPlayer" parent="music"]
+
+[node name="music_player_3" type="AudioStreamPlayer" parent="music"]
+
+[node name="music_player_4" type="AudioStreamPlayer" parent="music"]
+
+[node name="music_player_5" type="AudioStreamPlayer" parent="music"]
+
+[node name="music_player_6" type="AudioStreamPlayer" parent="music"]
+
+[node name="music_player_7" type="AudioStreamPlayer" parent="music"]
+
+[node name="music_player_8" type="AudioStreamPlayer" parent="music"]
+
+[node name="music_player_9" type="AudioStreamPlayer" parent="music"]
+
+[node name="music_player_10" type="AudioStreamPlayer" parent="music"]

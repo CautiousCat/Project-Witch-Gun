@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/DashSFX.ogg-82e00a904559210502a6891929c721b0.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Player/DashSFX.ogg"
+dest_files=[ "res://.import/DashSFX.ogg-82e00a904559210502a6891929c721b0.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

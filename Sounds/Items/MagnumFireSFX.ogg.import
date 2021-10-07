@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/MagnumFireSFX.ogg-727588da22b52945bb87c2248965f901.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Items/MagnumFireSFX.ogg"
+dest_files=[ "res://.import/MagnumFireSFX.ogg-727588da22b52945bb87c2248965f901.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

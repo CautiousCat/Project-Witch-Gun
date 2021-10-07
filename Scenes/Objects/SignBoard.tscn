@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Graphics/Objects/SignBoard.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Objects/SignBoard.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/5SquarePixel_24.tres" type="DynamicFont" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 13, 13 )
+
+[node name="SignBoard" type="Area2D"]
+collision_layer = 64
+script = ExtResource( 2 )
+text_to_display = PoolStringArray( "Hello! This is a message in a text box!", "This is the second message in the text box!", "Thank you for reading!" )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 3 )
+shape = SubResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 100
+custom_constants/margin_top = 50
+custom_constants/margin_left = 100
+custom_constants/margin_bottom = 500
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer"]
+margin_left = 100.0
+margin_top = 50.0
+margin_right = 1180.0
+margin_bottom = 220.0
+color = Color( 0.168627, 0.160784, 0.160784, 0.788235 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 20.0
+margin_right = -50.0
+margin_bottom = -20.0
+custom_fonts/normal_font = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="body_entered" from="." to="." method="_on_SignBoard_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_SignBoard_body_exited"]

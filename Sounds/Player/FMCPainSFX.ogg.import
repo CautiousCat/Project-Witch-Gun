@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/FMCPainSFX.ogg-6ab8874254df9a2bca5227b5f9f661cf.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Player/FMCPainSFX.ogg"
+dest_files=[ "res://.import/FMCPainSFX.ogg-6ab8874254df9a2bca5227b5f9f661cf.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

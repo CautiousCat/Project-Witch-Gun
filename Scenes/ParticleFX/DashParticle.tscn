@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/FX/DashParticle.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/ParticleFX/spotlight_5.png" type="Texture" id=2]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0.0431818 ), 0.0, -0.023385, 0, 0, Vector2( 0.605578, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 2
+emission_box_extents = Vector3( 1, 10, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 300, 0 )
+initial_velocity = 100.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.5
+scale_curve = SubResource( 2 )
+
+[node name="DashParticle" type="Particles2D"]
+amount = 18
+lifetime = 0.5
+process_material = SubResource( 3 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+duration = 0.1
+
+[node name="EmitterTimer" type="Timer" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="EmitterTimer" to="." method="_on_EmitterTimer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/FX/Particle.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/ParticleFX/spotlight_7.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/ParticleFX/spotlight_1.png" type="Texture" id=3]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0.0909091 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0651947, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+resource_local_to_scene = true
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 200, 0 )
+initial_velocity = 50.0
+angular_velocity = 309.33
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 200.0
+scale = 0.1
+scale_curve = SubResource( 2 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "FadeOut"
+
+[node name="TinySmokeParticle" type="Particles2D"]
+lifetime = 0.1
+speed_scale = 0.65
+draw_order = 1
+process_material = SubResource( 3 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+duration = 0.1
+texture_scale = 0.1
+time_scale = 3.0
+
+[node name="EmitterTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FadeOut = SubResource( 4 )
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 3 )
+texture_scale = 0.1
+color = Color( 0.929412, 0.827451, 0.145098, 1 )
+
+[connection signal="timeout" from="EmitterTimer" to="." method="_on_EmitterTimer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

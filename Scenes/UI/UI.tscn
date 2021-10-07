@@ -1,0 +1,168 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scenes/UI/UI.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/UI/ShotGunShell_UI.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Items/Gun/Witch Shotgun.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/UI/ShotGunShell_UI_Empty.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/UI/HealthBar_Full.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/UI/HealthBar_Empty.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/UI/DashBar_Empty.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/UI/DashBar_Full.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/UI/Magnum_UI_Shell_Full.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/UI/Magnum_UI_Shell_Emptyl.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/Items/Gun/Witch Magnum.png" type="Texture" id=11]
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 584.0 ],
+"_edit_use_anchors_": false
+}
+
+[node name="MagnumAmmoCounter" type="Label" parent="."]
+visible = false
+margin_left = 16.0
+margin_top = 64.0
+margin_right = 118.0
+margin_bottom = 78.0
+text = "Magnum Ammo"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShotgunAmmoCounter" type="Label" parent="."]
+visible = false
+margin_left = 16.0
+margin_top = 48.0
+margin_right = 136.0
+margin_bottom = 64.0
+text = "Shotgun Ammo: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthCounter" type="Label" parent="."]
+visible = false
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 62.0
+margin_bottom = 30.0
+text = "Health:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DashCounter" type="Label" parent="."]
+visible = false
+margin_left = 16.0
+margin_top = 32.0
+margin_right = 56.0
+margin_bottom = 46.0
+text = "Dash:"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 693.617
+margin_top = 608.0
+margin_right = -522.383
+margin_bottom = -80.0
+texture = ExtResource( 4 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShotgunAmmoCounterTexture" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 693.617
+margin_top = 608.0
+margin_right = -522.383
+margin_bottom = -80.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShotgunTexture" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 693.617
+margin_top = 608.0
+margin_right = -554.383
+margin_bottom = -80.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthCounterTexture" type="TextureProgress" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 576.0
+margin_top = 664.0
+margin_right = -576.0
+margin_bottom = -24.0
+rect_scale = Vector2( 1.5, 1.5 )
+value = 100.0
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DashCounterTexture" type="TextureProgress" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 576.0
+margin_top = 672.0
+margin_right = -576.0
+margin_bottom = -16.0
+rect_scale = Vector2( 1.5, 1.5 )
+texture_under = ExtResource( 7 )
+texture_progress = ExtResource( 8 )
+
+[node name="MagnumAmmoCounterEmptyTexture" type="TextureRect" parent="."]
+margin_left = 644.576
+margin_top = 584.0
+margin_right = 676.576
+margin_bottom = 656.0
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MagnumAmmoCounterTexture" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 677.39
+margin_top = 655.822
+margin_right = -570.61
+margin_bottom = 7.82239
+rect_rotation = 180.0
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 2
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MagnumTexture" type="TextureRect" parent="."]
+margin_left = 589.371
+margin_top = 612.503
+margin_right = 637.371
+margin_bottom = 652.503
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
